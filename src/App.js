@@ -9,17 +9,17 @@ class App extends Component {
   state ={
     todos:[
       {
-        id:1,
+        id:uuid(),
         title:"Take out the trash",
         completed:false
       },
       {
-        id:2,
+        id:uuid(),
         title:"Dinner with wife",
         completed:true
       },
       {
-        id:3,
+        id:uuid(),
         title:"Meeting with boss",
         completed:false
       }
