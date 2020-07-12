@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Todos from "./components/Todos";
+import Todos from "./components/Todos"
 
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
       {
         id:2,
         title:"Dinner with wife",
-        completed:false
+        completed:true
       },
       {
         id:3,
