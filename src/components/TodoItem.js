@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
         
-export class Todoitem extends Component {
+export class TodoItem extends Component {
     getStyle = () => {
         return {
             background:"#f4f4f4",
@@ -25,12 +25,17 @@ export class Todoitem extends Component {
                     <button onClick={this.props.delTodo.bind(this,id)} style={btnStyle}>x</button>
                     </p>
             </div>
-        )
+        );
     }
 }
-Todoitem.propTypes = {
-    todo:PropTypes.object.isRequired
-}
+
+
+
+TodoItem.propTypes = {
+    todo:PropTypes.object.isRequired,
+    markComplete:PropTypes.func.isRequired,
+    delTodo:PropTypes.func.isRequired,
+};
 const btnStyle = {
     background:'#ff0000',
     color:'#fff',
@@ -40,6 +45,6 @@ const btnStyle = {
     cursor:'pointer',
     float:'right'
 }
-export default Todoitem
+export default TodoItem
 
 
