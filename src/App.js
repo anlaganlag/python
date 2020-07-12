@@ -4,7 +4,7 @@ import Todos from "./components/Todos"
 
 class App extends Component {
   state ={
-    todo:[
+    todos:[
       {
         id:1,
         title:"Take out the trash",
@@ -22,13 +22,19 @@ class App extends Component {
       }
     ]
   }
-  markComplete = (id) =>
-      console.log(id)
+  markComplete = (id) =>{
+    this.setState({ todos: this.state.todos.map(todo=>{
+      if (todo.id === id){
+        todo.completed = !todo.completed
+      }
+      return todo;
+    })});
+  }
   
   render() {
     return (
       <div className="App">
-        <Todos todos={this.state.todo} 
+        <Todos todos={this.state.todos} 
         markComplete={this.markComplete} />
       </div>
     );
