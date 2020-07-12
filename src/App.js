@@ -3,6 +3,7 @@ import Header from './components/layout/Header'
 import Todos from "./components/Todos"
 import AddTodo from "./components/AddTodo"
 import './App.css'
+import {v4 as uuid} from 'uuid';
 
 class App extends Component {
   state ={
@@ -39,8 +40,14 @@ class App extends Component {
   }
   // Add Todo
   addTodo = (title) => {
-    console.log(title)
+    const newTodo = {
+      id:uuid(),
+      title,
+      completed:false
+    }
+    this.setState({ todos: [...this.state.todos,newTodo] });
   }
+
   
   render() {
     return (
